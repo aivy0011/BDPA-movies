@@ -4,6 +4,7 @@ include "db.php";
 $count = mysqli_fetch_array(mysqli_query($conn, "Select COUNT(*) From tempcart"));
 echo "Welcome {$_SESSION['user']}";
 echo "<button onclick=\"window.location.href = 'cart.php'\">View Cart ({$count['COUNT(*)']})</button>";
+echo '<a href="logoff.php">Log Off</a>';
 ?>
 
 <form method="post" action="dvdinfo.php">
@@ -18,4 +19,3 @@ echo "<button onclick=\"window.location.href = 'cart.php'\">View Cart ({$count['
 	echo "</table>";
 ?>	
 </form>
-<a href="logoff.php">Log Off</a>
