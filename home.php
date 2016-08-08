@@ -1,9 +1,9 @@
 <?php
 session_start();
 include "db.php";
-$count = mysqli_fetch_array(mysqli_query($conn, "Select COUNT(*) From tempcart"));
+$count = mysqli_fetch_array(mysqli_query($conn, "Select COUNT(*) From tempcart where tc_custid={$_SESSION["id"]}"));
 echo "Welcome {$_SESSION['user']}";
-echo "<button onclick=\"window.location.href = 'cart.php'\">View Cart ({$count['COUNT(*)']})</button>";
+echo "<button onclick=\"window.location.href = 'cart.php'\">View Cart ({$count['COUNT(*)']})</button><br> ";
 echo '<a href="logoff.php">Log Off</a>';
 ?>
 
